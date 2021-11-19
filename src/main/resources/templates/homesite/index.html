@@ -1,42 +1,46 @@
-<!DOCTYPE html>
+
+<!-- This page is illustrative and contains ideas about HTML formatting -->
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{base/layout}" lang="en">
 
-<head> <div layout:fragment="metadata" th:remove="tag">
-    <meta charset="UTF-8">
-    <title>Social Credit Farming</title>
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>Spring Intro</title>
 </div></head>
-<body><div layout:fragment="content" th:remove="tag"></div>
-<div class="container">
-    <button class="btn-grad">Woah</button>
-</div>
 
+<!-- layout::fragment="content" is heart of ThymeLeaf layout -->
+<body><div layout:fragment="content" th:remove="tag">
+    <!-- Start of body content specific to page -->
+    <div class="container">
+            <div class="col offset-md-3">
+                <button class="btn-grad">Get Started</button>
+        </div>
+    </div>
+    <style>
+
+        .btn-grad {background-image: linear-gradient(to right, #4CB8C4 0%, #3CD3AD  51%, #4CB8C4  100%)}
+        .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+
+        }
+
+        .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+
+    </style>
+    <!-- End of body content specific to page -->
 </div></body>
 
-
-
-<style>
-
-    .btn-grad {background-image: linear-gradient(to right, #4CB8C4 0%, #3CD3AD  51%, #4CB8C4  100%)}
-    .btn-grad {
-        margin: 10px;
-        padding: 15px 45px;
-        text-align: center;
-        text-transform: uppercase;
-        transition: 0.5s;
-        background-size: 200% auto;
-        color: white;
-        box-shadow: 0 0 20px #eee;
-        border-radius: 10px;
-        display: block;
-    }
-
-    .btn-grad:hover {
-        background-position: right center; /* change the direction of the change here */
-        color: #fff;
-        text-decoration: none;
-    }
-
-</style>
-</div>
 </html>
