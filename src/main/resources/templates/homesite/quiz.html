@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{base/layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
-<body onload="NextQuestion(0)">
+</div></head>
+
+<body onload="NextQuestion(0)"><div layout:fragment="content" th:remove="tag">
 <main>
     <!-- creating a modal for when quiz ends -->
     <div class="modal-container" id="score-modal">
@@ -89,5 +93,5 @@
 </main>
 <script th:src="@{js/quiz.js}"></script>
 <link rel="stylesheet" th:href="@{css/quiz.css}"></link>
-</body>
+</div></body>
 </html>
