@@ -13,16 +13,11 @@
 <body><div layout:fragment="content" th:remove="tag">
     <!-- Start of body content specific to page -->
     <div class="container">
-        <div class="row">
             <div class="col offset-md-3">
                 <button class="btn-grad">Get Started</button>
-            </div>
         </div>
     </div>
     <style>
-        background: #3494E6;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
         .btn-grad {background-image: linear-gradient(to right, #4CB8C4 0%, #3CD3AD  51%, #4CB8C4  100%)}
         .btn-grad {
@@ -31,11 +26,11 @@
             text-align: center;
             text-transform: uppercase;
             transition: 0.5s;
-            background-size: 200% auto;
+
             color: white;
             box-shadow: 0 0 20px #eee;
             border-radius: 10px;
-            display: block;
+
         }
 
         .btn-grad:hover {
