@@ -110,7 +110,7 @@ function handleQuestions() {
 
 
 let questionNumber = 1 //holds the current question number
-let playerScore = 0  //holds the player score
+let playerScore = localStorage.getItem("score") || 0  //holds the player score
 let wrongAttempt = 0 //amount of wrong answers picked by player
 let indexNumber = 0 //will be used in displaying next question
 
@@ -154,6 +154,7 @@ function checkForAnswer() {
             document.getElementById(correctOption).style.backgroundColor = "green"
             playerScore++ //adding to player's score
             indexNumber++ //adding 1 to index so has to display next question..
+            localStorage.setItem("score", playerScore)
             //set to delay question number till when next question loads
             setTimeout(() => {
                 questionNumber++
@@ -166,7 +167,8 @@ function checkForAnswer() {
             document.getElementById(correctOption).style.backgroundColor = "green"
             wrongAttempt++ //adds 1 to wrong attempts
             indexNumber++
-            playerScore = playerScore - 100
+            playerScore--
+            localStorage.setItem("score", playerScore)
             //set to delay question number till when next question loads
             setTimeout(() => {
                 questionNumber++
@@ -229,7 +231,7 @@ function handleEndGame() {
         remarkColor = "green"
     }
     const playerGrade = (playerScore / 10) * 100
-
+    localStorage.setItem("score", playerScore)
     //data to display to score board
     document.getElementById('remarks').innerHTML = remark
     document.getElementById('remarks').style.color = remarkColor
