@@ -11,6 +11,7 @@
 <body onload="NextQuestion(0)"><div layout:fragment="content" th:remove="tag">
 <main>
     <!-- creating a modal for when quiz ends -->
+    <div class="container-fluid">
     <div class="modal-container" id="score-modal">
 
         <div class="modal-content-container">
@@ -32,8 +33,9 @@
         </div>
     </div>
     <!-- end of modal of quiz details-->
-
-    <div class="game-quiz-container">
+    <div class="row">
+        <div class="col-md">
+    <div class="jumbotron">
 
         <div class="game-details-container">
             <h1>Score : <span id="player-score"></span></h1>
@@ -90,8 +92,36 @@
         </div>
 
     </div>
+    </div>
+    </div>
 </main>
 <script th:src="@{js/quiz.js}"></script>
-<link rel="stylesheet" th:href="@{css/quiz.css}"></link>
+<link rel="stylesheet" th:href="@{css/quiz.css}">
+    <style>
+        .btn-grad {background-image: linear-gradient(to right, #4CB8C4 0%, #3CD3AD  51%, #4CB8C4  100%)}
+        .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -100px;
+        }
+
+        .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+<div>
 </div></body>
 </html>
