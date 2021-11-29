@@ -100,7 +100,7 @@ let shuffledQuestions = [] //empty array to hold shuffled selected questions out
 function handleQuestions() {
     //function to shuffle and push 10 questions to shuffledQuestions array
 //app would be dealing with 10questions per session
-    while (shuffledQuestions.length <= 4) {
+    while (shuffledQuestions.length <= 9) {
         const random = questions[Math.floor(Math.random() * questions.length)]
         if (!shuffledQuestions.includes(random)) {
             shuffledQuestions.push(random)
@@ -110,7 +110,7 @@ function handleQuestions() {
 
 
 let questionNumber = 1 //holds the current question number
-let playerScore = 0  //holds the player score
+let playerScore = localStorage.getItem("score") || 0  //holds the player score
 let wrongAttempt = 0 //amount of wrong answers picked by player
 let indexNumber = 0 //will be used in displaying next question
 
@@ -154,6 +154,7 @@ function checkForAnswer() {
             document.getElementById(correctOption).style.backgroundColor = "green"
             playerScore++ //adding to player's score
             indexNumber++ //adding 1 to index so has to display next question..
+            localStorage.setItem("score", playerScore)
             //set to delay question number till when next question loads
             setTimeout(() => {
                 questionNumber++
@@ -166,7 +167,8 @@ function checkForAnswer() {
             document.getElementById(correctOption).style.backgroundColor = "green"
             wrongAttempt++ //adds 1 to wrong attempts
             indexNumber++
-            playerScore = playerScore - 100
+            playerScore--
+            localStorage.setItem("score", playerScore)
             //set to delay question number till when next question loads
             setTimeout(() => {
                 questionNumber++
@@ -183,7 +185,7 @@ function handleNextQuestion() {
     unCheckRadioButtons()
     //delays next question displaying for a second just for some effects so questions don't rush in on player
     setTimeout(() => {
-        if (indexNumber <= 4) {
+        if (indexNumber <= 9) {
 //displays next question as long as index number isn't greater than 9, remember index number starts from 0, so index 9 is question 10
             NextQuestion(indexNumber)
         }
@@ -216,20 +218,20 @@ function handleEndGame() {
     let remarkColor = null
 
     // condition check for player remark and remark color
-    if (playerScore <= 0) {
-        remark = "Bad Credit Score, Keep Practicing."
+    if (playerScore <= 3) {
+        remark = "Bad Grades, Keep Practicing."
         remarkColor = "red"
     }
-    else if (playerScore >= 2 && playerScore < 4) {
-        remark = "Average Social Credit, You can do better."
+    else if (playerScore >= 4 && playerScore < 7) {
+        remark = "Average Grades, You can do better."
         remarkColor = "orange"
     }
-    else if (playerScore >= 5) {
-        remark = "Good, you are proper China Citizen"
+    else if (playerScore >= 7) {
+        remark = "Excellent, Keep the good work going."
         remarkColor = "green"
     }
-    const playerGrade = (playerScore / 5) * 100
-
+    const playerGrade = (playerScore / 10) * 100
+    localStorage.setItem("score", playerScore)
     //data to display to score board
     document.getElementById('remarks').innerHTML = remark
     document.getElementById('remarks').style.color = remarkColor
