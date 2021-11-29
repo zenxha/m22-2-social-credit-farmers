@@ -3,7 +3,7 @@
 <head>
     <title>...</title>
 </head>
-<body>
+<body onload="showScore()">
 <!-- Begin navigation fragments -->
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9999cc;" th:fragment="header">
     <a class="navbar-brand" href="/">SCF</a>
@@ -21,6 +21,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/blank">Blank</a>
             </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown link
@@ -31,10 +32,21 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
+            <li class="nav-item">
+                <a id="score" class="nav-link">Social Credit Score: 0</a>
+            </li>
         </ul>
     </div>
 </nav>
+<script>
+    const showScore = () => {
+        setInterval(() => {
+            document.getElementById("score").innerHTML = "Social Credit Score: " + localStorage.getItem("score")
+            console.log(localStorage.getItem("score"))
+        }, 1000)
+    }
 
+</script>
 <!-- Begin navigation fragments -->
 </body>
 </html>
