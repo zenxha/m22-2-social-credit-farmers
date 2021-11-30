@@ -24,7 +24,7 @@ The last annotation connect to database
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Entity
-public class Person {
+public class Score {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -46,7 +46,7 @@ public class Person {
     private Date dob;
 
     /* Initializer used when setting data from an API */
-    public Person(String email, String name, Date dob) {
+    public Score(String email, String name, Date dob) {
         this.email = email;
         this.name = name;
         this.dob = dob;
