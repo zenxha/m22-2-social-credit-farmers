@@ -3,7 +3,7 @@
 <head>
     <title>...</title>
 </head>
-<body onload="showScore()">
+<body onload="updateScore()">
 <!-- Begin navigation fragments -->
 <nav class="navbar navbar-expand-lg navbar-light"  th:fragment="header">
     <a class="navbar-brand" href="/">SCF</a>
@@ -39,16 +39,18 @@
             </li>
         </ul>
     </div>
-</nav>
-<script>
-    const showScore = () => {
-        setInterval(() => {
-            document.getElementById("score").innerHTML = "Social Credit Score: " + localStorage.getItem("score")
-            console.log(localStorage.getItem("score"))
-        }, 1000)
+    <script>
+    console.log("yo")
+    function updateScore() {
+        let score = localStorage.getItem("score");
+        document.getElementById("score").textContent = "Social Credit Score: "+ score.toString();
+        console.log(score)
     }
+    setInterval(updateScore, 1000 )
 
 </script>
+</nav>
+
 <!-- Begin navigation fragments -->
 </body>
 </html>
