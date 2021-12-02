@@ -91,6 +91,14 @@ const questions = [
         correctOption: "optionB"
     },
 
+    {
+        question: "Finish the sentence: Super Idol的笑容都没你的甜, 八月正午的阳光都没你耀眼, 热爱...",
+        optionA: "如果你正好在凌晨4:20在水槽中大喊大叫”amogus”69次，一个神秘的人物叫做”妈妈”会过来揍你一顿，你将在一个名为孤儿院的地方醒来",
+        optionB: "一百零五度",
+        optionC: "105 °F",
+        optionD: "阿莫古斯",
+        correctOption: "optionB"
+    },
 
 ]
 
