@@ -6,18 +6,28 @@
       layout:decorate="~{base/layout}" lang="en">
 
 <head><div layout:fragment="metadata" th:remove="tag">
-    <title>Spring Intro</title>
+    <title>SCF</title>
 </div></head>
 
 <!-- layout::fragment="content" is heart of ThymeLeaf layout -->
 <body><div layout:fragment="content" th:remove="tag">
     <!-- Start of body content specific to page -->
     <div class="container">
-        <div class="col offset-md-3">
-            <div>
-                <a href="/quiz" class="btn-grad">Get Started</a>
+
+        <div class="row">
+            <div class="col ">
+                <div>
+                    <img src="https://files.catbox.moe/srhy8h.png"  class="img-fluid" >
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="col">
+                <div>
+                    <a id="slide" href="/quiz" class="btn-grad">Get Started</a>
+                </div>
             </div>
         </div>
+
     </div>
     <style>
 
@@ -35,8 +45,8 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            margin-top: -50px;
-            margin-left: -100px;
+            /*margin-top: -50px;*/
+            /*margin-left: -100px;*/
         }
 
         .btn-grad:hover {
@@ -44,6 +54,32 @@
             color: #fff;
             text-decoration: none;
         }
+        #slide {
+            position: absolute;
+            left: -600px;
+            width: 150px;
+            height: 80px;
+            -webkit-animation: slide 0.5s forwards;
+            -webkit-animation-delay: 2s;
+            animation: slide 0.5s forwards;
+            animation-delay: 0s;
+        }
+
+        @-webkit-keyframes slide {
+            100% { left: 0; }
+        }
+
+        @keyframes slide {
+            100% { left: 0; }
+        }
+        @-webkit-keyframes leftslide {
+            100% { right: 0; }
+        }
+
+        @keyframes leftslide {
+            100% { right: 0; }
+        }
+
 
     </style>
     <!-- End of body content specific to page -->
