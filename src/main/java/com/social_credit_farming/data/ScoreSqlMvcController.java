@@ -116,12 +116,12 @@ public class ScoreSqlMvcController implements WebMvcConfigurer {
     public ResponseEntity<Object> postScore(@RequestParam("email") String email,
                                              @RequestParam("name") String name,
                                              @RequestParam("dob") String dobString) {
-        Date dob;
-        try {
+        String dob = null;
+        /*try {
             dob = new SimpleDateFormat("MM-dd-yyyy").parse(dobString);
         } catch (Exception e) {
             return new ResponseEntity<>(dobString +" error; try MM-dd-yyyy", HttpStatus.BAD_REQUEST);
-        }
+        }*/
         // A person object WITHOUT ID will create a new record
         Score score = new Score(email, name, dob);
         repository.save(score);

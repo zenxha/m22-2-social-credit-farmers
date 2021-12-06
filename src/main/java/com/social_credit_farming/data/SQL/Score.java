@@ -42,22 +42,22 @@ public class Score {
     @Size(min = 2, max = 30, message = "Name (2 to 30 chars)")
     private String name;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date dob;
+    @NotEmpty
+    private String dob;
 
     /* Initializer used when setting data from an API */
-    public Score(String email, String name, Date dob) {
+    public Score(String email, String name, String dob) {
         this.email = email;
         this.name = name;
         this.dob = dob;
     }
 
     /* A custom getter to return age from dob calculation */
-    public int getAge() {
+/*    public int getAge() {
         if (this.dob != null) {
             LocalDate birthDay = this.dob.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             return Period.between(birthDay, LocalDate.now()).getYears(); }
         return -1;
-    }
+    }*/
 
 }

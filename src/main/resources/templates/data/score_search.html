@@ -28,18 +28,19 @@
       <tr>
         <th>ID</th>
         <th>Email</th>
+        <th>Name</th>
         <th>Score</th>
-        <th>Age</th>
-        <th>Action</th>
       </tr>
       </thead>
       <tbody>
       <tr th:each="score : ${list}">
         <td th:text="${score.id}">Score ID</td>
-        <td th:text="${score.email}">Birth Date</td>
+        <td th:text="${score.email}">Email</td>
         <td th:text="${score.name}">Name</td>
-        <td th:if="${score.getAge() != -1}" th:text="${score.getAge()}">Age</td>
-        <td th:unless="${score.getAge() != -1}" th:text="Unknown">Unknown Age</td>
+        <td th:text="${score.dob}">Score</td>
+
+        <!--<td th:if="${score.getAge() != -1}" th:text="${score.getAge()}">Age</td>
+        <td th:unless="${score.getAge() != -1}" th:text="Unknown">Unknown Age</td>-->
         <td>
           <a th:href="@{/data/scoreupdate/{id}(id = ${score.id})}">Update</a>
         </td>
