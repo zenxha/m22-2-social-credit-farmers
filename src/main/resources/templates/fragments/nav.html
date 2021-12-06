@@ -5,57 +5,74 @@
 </head>
 <body onload="updateScore()">
 <!-- Begin navigation fragments -->
-<nav class="navbar navbar-expand-lg navbar-light"  th:fragment="header">
-    <a class="navbar-brand" href="/">SCF</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/cb">CollegeBoard <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/blank">Blank</a>
-            </li>
+<th:block xmlns:th="https://www.w3.org/1999/xhtml"  th:fragment="header">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/css/uikit.min.css" />
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Minilabs
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="/komay">Komay</a>
-                    <a class="dropdown-item" href="/allen">Allen</a>
-                    <a class="dropdown-item" href="/tanmay">Tanmay</a>
-                    <a class="dropdown-item" href="/roop">Roop</a>
-                    <a class="dropdown-item" href="/nicholas">Nicholas</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a id="score" class="nav-link mr-auto">Social Credit Score: 0</a>
-            </li>
-        </ul>
-    </div>
-    <style>
-       #score {
-            color: red;
-           font-weight: bold;
-       }
-    </style>
-    <script>
-    console.log("yo")
-    function updateScore() {
-        let score = localStorage.getItem("score");
-        document.getElementById("score").textContent = "Social Credit Score: "+ score.toString();
-        console.log(score)
-    }
-    setInterval(updateScore, 1000 )
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/">SCF</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/cb">CollegeBoard <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blank">Blank</a>
+                </li>
 
-</script>
-</nav>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Minilabs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/komay">Komay</a>
+                        <a class="dropdown-item" href="/allen">Allen</a>
+                        <a class="dropdown-item" href="/tanmay">Tanmay</a>
+                        <a class="dropdown-item" href="/roop">Roop</a>
+                        <a class="dropdown-item" href="/nicholas">Nicholas</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a id="scorelabel" class="nav-link mr-auto">Social Credit Score: </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item d-flex">
+                    <form class="d-flex" action="/search" method="get">
+                        <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </li>
+            </ul>
+
+        </div>
+        <style>
+            #scorelabel {
+                font-weight: bold;
+            }
+            #score {
+                color: #ff0000;
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            console.log("yo")
+            function updateScore() {
+                let score = localStorage.getItem("score");
+                document.getElementById("scorelabel").textContent = "Social Credit Score: " + score.toString();
+                console.log(score)
+            }
+            setInterval(updateScore, 1000 )
+
+        </script>
+    </nav>
+</th:block>
 
 <!-- Begin navigation fragments -->
 </body>
