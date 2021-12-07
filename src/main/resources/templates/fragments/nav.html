@@ -63,6 +63,7 @@
         </style>
         <script>
             console.log("yo")
+            document.getElementById("scorelabel").textContent = "Social Credit Score: 0"
             function updateScore() {
                 let score = localStorage.getItem("score");
                 document.getElementById("scorelabel").textContent = "Social Credit Score: " + score.toString();
