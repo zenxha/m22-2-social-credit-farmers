@@ -17,12 +17,12 @@
     <div class="row justify-content-left" style="margin: 2%;">
       <form th:action="@{/cb/distance}" method="GET" id="greetForm">
         <div>
-          <label for="distancea">Distance 1?</label>
+          <label for="distancea">Point A?</label>
           <input name="name1" id="distancea">
-          <label for="distanceb">Distance 2?</label>
+          <label for="distanceb">Point B?</label>
           <input name="name2" id="distanceb">
           <button>Calculate!</button>
-          <p id="greetMessage" th:text="'Distance: ' + ${s} + '!'"></p>
+          <p id="greetMessage" th:text="'Distance between lights: ' + ${s} + '!'"></p>
         </div>
       </form>
     </div>
