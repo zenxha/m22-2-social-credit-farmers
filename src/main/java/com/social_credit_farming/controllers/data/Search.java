@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class Search {
     @GetMapping("/search")
     // CONTROLLER handles GET request for /greeting, maps it to greeting() and does variable bindings
-    public String greeting(@RequestParam(name = "query", required = false, defaultValue = "") String name, Model model) {
+    public String greeting(@RequestParam(name = "query", required = false, defaultValue = "") String queryIn, Model model) {
         // @RequestParam handles required and default values, name and model are class variables, model looking like JSON
-        model.addAttribute("query", name); // MODEL is passed to html
+        model.addAttribute("query", queryIn); // MODEL is passed to html
         return "data/search"; // returns HTML VIEW (greeting)
 
     }
