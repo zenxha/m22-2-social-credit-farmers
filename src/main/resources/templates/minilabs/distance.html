@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{base/layout}" lang="en">
+
+<!-- <head> -->
+<div layout:fragment="metadata" th:remove="tag">
+  <!-- Page specific head additions -->
+  <title>Distance Lab</title>
+</div>
+
+<!-- <body> -->
+<div layout:fragment="content" th:remove="tag">
+  <!-- Page specific body additions -->
+  <div class="contact" style="height: 35vh;">
+    <div class="row justify-content-left" style="margin: 2%;">
+      <form th:action="@{/cb/distance}" method="GET" id="greetForm">
+        <div>
+          <label for="distancea">Distance 1?</label>
+          <input name="name1" id="distancea">
+          <label for="distanceb">Distance 2?</label>
+          <input name="name2" id="distanceb">
+          <button>Calculate!</button>
+          <p id="greetMessage" th:text="'Distance: ' + ${s} + '!'"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

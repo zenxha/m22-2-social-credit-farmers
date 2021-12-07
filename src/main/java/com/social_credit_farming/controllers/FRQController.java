@@ -42,6 +42,11 @@ public class FRQController {
         System.out.println(lis.get(0).getName());
         model.addAttribute("FRQlist", lis );
         return "cb/week1";
+
+    }
+    @GetMapping("/cb/1a")
+    public String Empty() {
+        return "cb/week1a";
     }
 
 }
