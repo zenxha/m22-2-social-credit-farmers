@@ -9,12 +9,22 @@
     <title>Week 1</title>
     <link rel="stylesheet" th:href="@{/css/button.css}">
     <script th:inline="javascript">
-        function renderOutput() {
-            const everyone = [[${FRQlist}]]
+        const everyone = [[${FRQlist}]]
+        const renderAll = (text) =>{
             everyone.forEach(person => {
-                document.getElementById(person.name).innerHTML = person.output
+                document.getElementById(person.name).innerHTML = text
             })
-            console.log(everyone)
+        }
+        function renderOutput() {
+            renderAll("Loading...")
+            setTimeout(() => {
+                everyone.forEach(person => {
+                    document.getElementById(person.name).innerHTML = person.output
+                })
+                console.log(everyone)
+            },1000)
+
+
         }
         function oo() {
             console.log("oo")
@@ -44,7 +54,7 @@
                     <tr th:each="frq : ${FRQlist}">
                         <td th:text="${frq.getName()}"></td>
                         <td><a th:href="${frq.getGist()}">Open</a></td>
-                        <td th:id="${frq.getName}"></td>
+                        <td th:id="${frq.getName}"><i class="fas fa-circle-notch"></i></td>
                     </tr>
                     </tbody>
                 </table>
