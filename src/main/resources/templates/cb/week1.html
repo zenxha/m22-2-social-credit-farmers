@@ -22,8 +22,8 @@
                     document.getElementById(person.name).innerHTML = person.output
                 })
                 console.log(everyone)
-            },1000)
-
+            },900)
+            console.log([[${gistSrc}]])
 
         }
         function oo() {
@@ -31,15 +31,32 @@
         }
         // document.getElementById("runbtn").addEventListener("click", renderOutput)
     </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </div></head>
 
 <!-- layout::fragment="content" is heart of ThymeLeaf layout -->
 <body><div layout:fragment="content" th:remove="tag">
     <!-- Start of body content specific to page -->
 <div class="container">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <script src="https://gist.github.com/zenxha/26d0f54b6dadec2616dc7f07e35150e6.js"></script>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
 
-    <div class="jumbotron text-center">
-        <div class="row">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 p-5 bg-light text-white rounded" id="jumbotron">
+        <div class="row justify-content-center">
             <div class="col-md-6">
                 <h3>FRQ Week 1</h3>
                 <table class="table">
@@ -58,26 +75,29 @@
                     </tr>
                     </tbody>
                 </table>
+                <btn id="runbtn" onclick="renderOutput()"class="btn-grad">Run</btn>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    See Code
+                </button>
             </div>
-            <div class="col-md-6">
-                <div>
-                    <btn id="runbtn" onclick="renderOutput()"class="btn-grad">Run</btn>
-                </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col">
             </div>
         </div>
     </div>
     <div class="col">
-        <script src="https://gist.github.com/zenxha/26d0f54b6dadec2616dc7f07e35150e6.js"></script>
+
     </div>
 </div>
 </div>
 
     <!-- End of body content specific to page -->
-<script th:inline="javascript">
-    const week = [[${frqList}]]
-    console.log("adas")
-    console.log(week)
-</script>
+<style>
+    #jumbotron {
+        width: 500px
+    }
+</style>
 
 </div></body>
 

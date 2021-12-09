@@ -41,6 +41,7 @@ public class FRQController {
         }
         System.out.println(lis.get(0).getName());
         model.addAttribute("FRQlist", lis );
+        model.addAttribute("gistSrc", jsonObject);
         return "cb/week1";
 
     }
