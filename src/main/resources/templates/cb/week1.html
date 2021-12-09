@@ -8,6 +8,19 @@
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>Week 1</title>
     <link rel="stylesheet" th:href="@{/css/button.css}">
+    <script th:inline="javascript">
+        function renderOutput() {
+            const everyone = [[${FRQlist}]]
+            everyone.forEach(person => {
+                document.getElementById(person.name).innerHTML = person.output
+            })
+            console.log(everyone)
+        }
+        function oo() {
+            console.log("oo")
+        }
+        // document.getElementById("runbtn").addEventListener("click", renderOutput)
+    </script>
 </div></head>
 
 <!-- layout::fragment="content" is heart of ThymeLeaf layout -->
@@ -21,24 +34,24 @@
                 <h3>FRQ Week 1</h3>
                 <table class="table">
                     <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Gist Link</th>
-                            <th scope="col">Output</th>
-                        </tr>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Gist Link</th>
+                        <th scope="col">Output</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="frq : ${FRQlist}">
-                            <td th:text="${frq.getName()}"></td>
-                            <td><a th:href="${frq.getGist()}">Open</a></td>
-                            <td th:text="${frq.getOutput()}"></td>
-                        </tr>
+                    <tr th:each="frq : ${FRQlist}">
+                        <td th:text="${frq.getName()}"></td>
+                        <td><a th:href="${frq.getGist()}">Open</a></td>
+                        <td th:id="${frq.getName}"></td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
             <div class="col-md-6">
                 <div>
-                    <btn id="runbtn" class="btn-grad">Run</btn>
+                    <btn id="runbtn" onclick="renderOutput()"class="btn-grad">Run</btn>
                 </div>
             </div>
         </div>
