@@ -1,0 +1,37 @@
+{
+  "komay": {
+    "name": "Komay",
+    "info": "https://google.com",
+    "youtube": "poggers!",
+    "maskon": "",
+    "maskoff": ""
+  },
+  "allen": {
+    "name": "Allen",
+    "info": "Scrum leader, collaboration focused, always ready to learn",
+    "youtube": "https://www.youtube.com/watch?v=GasotumAaqU",
+    "maskon": "https://files.catbox.moe/zn4y9e.png ",
+    "maskoff": "https://files.catbox.moe/6qjs2n.png "
+  },
+  "nick": {
+    "name": "Nick",
+    "info": "",
+    "youtube": "",
+    "maskon": "",
+    "maskoff": ""
+  },
+  "tanmay": {
+    "name": "Tanmay",
+    "info": "",
+    "youtube": "",
+    "maskon": "",
+    "maskoff": ""
+  },
+  "roop": {
+    "name": "Roop",
+    "info": "",
+    "youtube": "",
+    "maskon": "",
+    "maskoff": ""
+  }
+}
