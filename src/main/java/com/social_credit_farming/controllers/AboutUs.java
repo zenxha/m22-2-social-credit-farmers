@@ -54,4 +54,9 @@ public class AboutUs {
         model.addAttribute("person", "Tanmay");
         return "homesite/abouttanmay";
     }
+    @GetMapping("/about/nick")
+    public String AboutNick(Model model) {
+        model.addAttribute("person", "Nicholas");
+        return "homesite/aboutnick";
+    }
 }
