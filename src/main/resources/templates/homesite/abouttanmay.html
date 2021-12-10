@@ -22,14 +22,14 @@
                 });
             }
             let togglee = false;
-            const maskoff = "https://files.catbox.moe/aehynu.JPG"
-            const maskon = "https://files.catbox.moe/w1v4tt.JPG"
+            const nomask = "https://files.catbox.moe/aehynu.JPG"
+            const withmask = "https://files.catbox.moe/w1v4tt.JPG"
             const toggleMask = () => {
                 let card = document.getElementById("mask")
                 if(togglee === true) {
-                    card.src= maskoff
+                    card.src= nomask
                 } else {
-                    card.src = maskon;
+                    card.src = withmask;
                 }
                 console.log(card.src)
                 togglee = !togglee
