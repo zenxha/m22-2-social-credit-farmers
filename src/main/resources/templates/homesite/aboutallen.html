@@ -5,6 +5,8 @@
 
     <html lang="en">
     <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
         <meta charset="UTF-8">
         <title>About Allen</title>
     </head>
@@ -34,6 +36,26 @@
                             <a href="https://github.com/purplebears321" style="color:white">Profile</a>
                         </h3>
 
+                        <img id="quote" src="https://generated.inspirobot.me/a/5keGo7V8eA.jpg">
+                        <h3>
+                            <a class="btn btn-primary btn-lg" role="button" onClick="generate()" >Quote</a>
+                        </h3>
+
+
+                        <script>
+    function generate() {
+        $.ajax({
+        url: "https://inspirobot.me/api?generate=true",
+        type: 'GET',
+        dataType: 'text', // added data type
+        success: function(res) {
+            console.log(res);
+            document.getElementById("quote").src=res;
+        }
+    });
+    }
+
+</script>
                     </div>
                 </div>
             </div>
