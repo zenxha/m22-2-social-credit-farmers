@@ -9,4 +9,9 @@ public class AboutUs {
     public String About() {
         return "homesite/about";
     }
+
+    @GetMapping("/about/allen")
+    public String AboutAllen() {
+        return "homesite/aboutallen";
+    }
 }
