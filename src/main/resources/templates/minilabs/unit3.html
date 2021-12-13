@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{base/layout}" lang="en">
+
+<!-- <head> -->
+<div layout:fragment="metadata" th:remove="tag">
+    <!-- Page specific head additions -->
+    <title>Unit 3 FRQ</title>
+</div>
+
+<!-- <body> -->
+<div layout:fragment="content" th:remove="tag">
+    <!-- Page specific body additions -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Unit 3 FRQ!</h1>
+            <p class="lead">Select RSVP option and input a number to select a meal!</p>
+            <hr class="my-4">
+            <form th:action="@{/cb/unit3}" method="GET" id="rsvpForm">
+                <div>
+                    <p><b>RSVP</b></p>
+                    <label for="rsvp">RSVP?</label>
+                    <select name="rsvp" id="rsvp">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <div>
+                    <p><b>Order food</b></p>
+                    <label for="value">Order?</label>
+                    <input type = number name="value" id="value">
+                    <div>
+                        <button>Order!</button>
+                    </div>
+                    <p th:text="${attending} + ${food}"></p>
+                </div>
+            </form>
+            <hr class="my-4">
+            <form th:action="@{/cb/unit3}" method="GET" id="optionForm">
+                <div>
+                    <p><b>Option</b></p>
+                    <label for="option1">Option 1?</label>
+                    <input name="option1" id="option1">
+                    <label for="option2">Option 2?</label>
+                    <input name="option2" id="option2">
+                    <button>Check!</button>
+                    <p id="boolean" th:text="${result} + '!'"></p>
+                </div>
+            </form>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="/about" role="button">About Us</a>
+            </p>
+        </div>
+
+    </div>
+</div>
+</div>
