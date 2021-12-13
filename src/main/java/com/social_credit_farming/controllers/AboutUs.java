@@ -49,6 +49,11 @@ public class AboutUs {
         return "homesite/aboutkomay";
     }
 
+    @GetMapping("/about/roop")
+    public String aboutroop(Model model) {
+        model.addAttribute("person", "Roop");
+        return "homesite/aboutroop";
+    }
     @GetMapping("/about/tanmay")
     public String AboutTanmay(Model model) {
         model.addAttribute("person", "Tanmay");
