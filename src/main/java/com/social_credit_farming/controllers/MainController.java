@@ -25,4 +25,9 @@ public class MainController {
         return "base/blank"; // returns HTML VIEW (greeting)
 
     }
+    @GetMapping("/cb/canvas")
+    public String Canvas(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "minilabs/canvas";
+    }
 }

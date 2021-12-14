@@ -6,14 +6,30 @@
       layout:decorate="~{base/layout}" lang="en">
 
 <!-- <head> -->
-<th:block layout:fragment="head" th:remove="tag">
+<th:block layout:fragment="metadata" th:remove="tag">
     <title>Draw</title>
 </th:block>
 
-<th:block layout:fragment="body" th:remove="tag">
+<th:block layout:fragment="content" th:remove="tag">
     <h1 class="text-center">JavaScript - Draw on Canvas</h1>
     <div class="container py-4 bg-primary" style="text-align:center;">
         <canvas id="canvas" width="512" height="384" ></canvas>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="x">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Y">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Size">
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-caution">Draw</button>
+                </div>
+            </div>
+        </form>
     </div>
 
     <script>
