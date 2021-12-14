@@ -45,9 +45,9 @@ public class FRQController {
         return "cb/week1";
 
     }
-    @GetMapping("/cb/1a")
+    @GetMapping("/cb/all")
     public String Empty() {
-        return "cb/week1a";
+        return "minilabs/index";
     }
 
 }
