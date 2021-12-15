@@ -14,19 +14,19 @@
     <h1 class="text-center">JavaScript - Draw on Canvas</h1>
     <div class="container py-4 bg-primary" style="text-align:center;">
         <canvas id="canvas" width="512" height="384" ></canvas>
-        <form>
+        <form id="inputform" >
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="x">
+                    <input id="x" type="text" class="form-control" placeholder="x">
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Y">
+                    <input id="y" type="text" class="form-control" placeholder="Y">
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Size">
+                    <input id="unit" type="text" class="form-control" placeholder="Size">
                 </div>
                 <div class="col">
-                    <button type="submit" class="btn btn-caution">Draw</button>
+                    <btn onclick="getFormData()" class="btn btn-caution">Draw</btn>
                 </div>
             </div>
         </form>
@@ -38,7 +38,20 @@
         const ctx = canvas.getContext('2d');
         const width = canvas.width;
         const height = canvas.height;
-        const unit = 16;   // unit block size
+        let unit = 16;   // unit block size
+        const form  = document.getElementById('inputform');
+        let x = 4
+        let y = 4
+        let l;
+        const getFormData = () => {
+            x = document.getElementById("x").value;
+            y = document.getElementById("y").value;
+            l = document.getElementById("unit").value;
+            console.log(x);
+            console.log(y)
+            square();
+        }
+
 
 
         // grid based off of width, height
@@ -79,10 +92,10 @@
             ctx.lineWidth = 5;
 
             // starting coordinates
-            const x = unit;
-            const y = unit;
+            // const x = unit;
+            // const y = unit;
             // length of sides is 4 units
-            const l = unit*4;
+            const l = unit;
 
             // draw a square
             ctx.beginPath();
@@ -92,6 +105,12 @@
             ctx.lineTo(x+l, y);
             ctx.lineTo(x, y);
             ctx.stroke();
+            console.log("square ran")
+            setTimeout(() => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                grid()
+                axis()
+            }, 5000)
         }
         // three actions
         grid();

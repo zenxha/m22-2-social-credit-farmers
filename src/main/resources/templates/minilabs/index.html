@@ -16,11 +16,11 @@
 <body><div layout:fragment="content" th:remove="tag">
   <!-- Start of body content specific to page -->
   <div class="container">
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="week1" tabindex="-1" aria-labelledby="week1label" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="week1label">Week 1</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -40,12 +40,37 @@
         </div>
       </div>
     </div>
-    <div class="card" style="width: 24rem;">
-      <div class="card-body">
-        <p class="display-6">Week 1</p>
-        <button id="runbtn" class="btn-grad" data-bs-toggle="modal" data-bs-target="#exampleModal">Run</button>
+    <div class="modal fade" id="week2" tabindex="-1" aria-labelledby="week2label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="week2label">Week 2</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="submit  " class="btn btn-primary" form="distanceform">Submit</button>
+          </div>
+        </div>
+      </div>
     </div>
+   <div class="row">
+     <div class="card" style="width: 24rem;">
+       <div class="card-body">
+         <p class="display-6">Week 1</p>
+         <button id="runbtn" class="btn-grad" data-bs-toggle="modal" data-bs-target="#week1">Run</button>
+       </div>
+     </div>
+     <div class="card" style="width: 24rem;">
+       <div class="card-body">
+         <p class="display-6">Week 2</p>
+         <button class="btn-grad" data-bs-toggle="modal" data-bs-target="#week2">Run</button>
+       </div>
+     </div>
+   </div>
   </div>
+
   <!-- End of body content specific to page -->
 </div></body>
 
